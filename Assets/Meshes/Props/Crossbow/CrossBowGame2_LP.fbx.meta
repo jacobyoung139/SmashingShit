@@ -1,0 +1,148 @@
+fileFormatVersion: 2
+guid: 096ed0cd5c32d8b46b683f55969108c7
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bow_Loc_L
+    100002: Bow_Loc_R
+    100004: BowArm1_L
+    100006: BowArm1_R
+    100008: BowArm2_L
+    100010: BowArm2_R
+    100012: BowArm3_L
+    100014: BowArm3_R
+    100016: BowArm4_L
+    100018: BowArm4_R
+    100020: BowArm5_L
+    100022: BowArm5_R
+    100024: BowArmature
+    100026: BowArmature1
+    100028: BowIK_L
+    100030: BowIK_R
+    100032: bowstrong:Mesh
+    100034: CrossBow
+    100036: //RootNode
+    100038: joint7
+    100040: joint7 1
+    100042: joint8
+    100044: PullBack
+    100046: PullbackString
+    100048: String_CTRL
+    100050: Torus
+    400000: Bow_Loc_L
+    400002: Bow_Loc_R
+    400004: BowArm1_L
+    400006: BowArm1_R
+    400008: BowArm2_L
+    400010: BowArm2_R
+    400012: BowArm3_L
+    400014: BowArm3_R
+    400016: BowArm4_L
+    400018: BowArm4_R
+    400020: BowArm5_L
+    400022: BowArm5_R
+    400024: BowArmature
+    400026: BowArmature1
+    400028: BowIK_L
+    400030: BowIK_R
+    400032: bowstrong:Mesh
+    400034: CrossBow
+    400036: //RootNode
+    400038: joint7
+    400040: joint7 1
+    400042: joint8
+    400044: PullBack
+    400046: PullbackString
+    400048: String_CTRL
+    400050: Torus
+    2100000: Rope
+    4300000: Torus
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Torus
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rope
+    second: {fileID: 2100000, guid: d1b5bbb18b54b9a4b8fe9188ee5c9f48, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

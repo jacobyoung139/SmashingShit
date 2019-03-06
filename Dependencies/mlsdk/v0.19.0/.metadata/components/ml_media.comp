@@ -1,0 +1,10 @@
+USES=ml_sdk_common
+
+# Media shared libraries
+SHLIBS = \
+  ml_mediaplayer \
+  ml_mediacodec \
+  ml_mediacodeclist \
+  ml_mediaformat \
+  ml_mediaextractor \
+

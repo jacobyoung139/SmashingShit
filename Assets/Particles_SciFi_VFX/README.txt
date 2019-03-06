@@ -1,0 +1,1 @@
+Thank you for purchasing this asset! Please feel free to use and modify however needed.

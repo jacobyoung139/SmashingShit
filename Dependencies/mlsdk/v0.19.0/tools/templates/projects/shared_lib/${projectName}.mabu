@@ -1,0 +1,7 @@
+KIND = shared
+SRCS = src/${projectName}.cpp
+INCS = inc/
+
+OPTIONS = \
+	standard-c++/11 \
+	stl/libgnustl

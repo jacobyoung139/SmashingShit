@@ -1,0 +1,113 @@
+{
+   "ChannelMap" : [
+      {
+         "Channel" : "Eye Fixation Position",
+         "Device" : "MockML1EyeTrackingSparseDevice"
+      },
+      {
+         "Channel" : "Eye Left Center Position",
+         "Device" : "MockML1EyeTrackingSparseDevice"
+      },
+      {
+         "Channel" : "Eye Right Center Position",
+         "Device" : "MockML1EyeTrackingSparseDevice"
+      },
+      {
+         "Channel" : "Eye Tracking State",
+         "Device" : "MockML1EyeTrackingSparseDevice"
+      },
+      {
+         "Channel" : "Gesture Tracking Data",
+         "Device" : "MockML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Graphics Contract",
+         "Device" : "MockML1GraphicsViewSparseDevice"
+      },
+      {
+         "Channel" : "Hand Tracking Data",
+         "Device" : "MockML1HeadTrackingSparseDevice"
+      },
+      {
+         "Channel" : "Head Transform",
+         "Device" : "MockML1HeadposeSparseDevice"
+      },
+      {
+         "Channel" : "Head Tracking State",
+         "Device" : "MockML1HeadposeSparseDevice"
+      },
+      {
+         "Channel" : "Keypoint Orientation Left 0",
+         "Device" : "MockML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Keypoint Orientation Left 1",
+         "Device" : "MockML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Keypoint Orientation Right 0",
+         "Device" : "MockML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Keypoint Orientation Right 1",
+         "Device" : "MockML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Keypoint Position Left 0",
+         "Device" : "MockML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Keypoint Position Left 1",
+         "Device" : "MockML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Keypoint Position Right 0",
+         "Device" : "MockML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Keypoint Position Right 1",
+         "Device" : "MockML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Left Hand Center Orientation",
+         "Device" : "MockML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Left Hand Center Position",
+         "Device" : "MockML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Left Hand Keypoints",
+         "Device" : "MockML1HandTrackingSparseDevice"
+      },
+      {
+         "Channel" : "Mesh Data",
+         "Device" : "MockML1MeshingSparseDevice"
+      },
+      {
+         "Channel" : "Mesh Info Data",
+         "Device" : "MockML1MeshingSparseDevice"
+      },
+      {
+         "Channel" : "Planes Data",
+         "Device" : "MockML1PlanesSparseDevice"
+      },
+      {
+         "Channel" : "Raycast Results",
+         "Device" : "MockML1RaycastSparseDevice"
+      },
+      {
+         "Channel" : "Right Hand Center Orientation",
+         "Device" : "MockML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Right Hand Center Position",
+         "Device" : "MockML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Right Hand Keypoints",
+         "Device" : "MockML1HandTrackingSparseDevice"
+      }
+   ],
+   "ManifestType" : "ChannelMap"
+}

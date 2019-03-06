@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.magicleap.common.log.feature"
+      label="Logging Feature"
+      version="1.0.0.201812070037"
+      provider-name="MAGICLEAP">
+
+   <description url="https://www.magicleap.com">
+      This feature is used to provision logging functionality that
+is shared between
+the Lumin Runtime Editor and other tools using the same logging
+mechanism
+   </description>
+
+   <copyright url="https://www.magicleap.com">
+      Copyright (c) 201x Magic Leap, Inc. (COMPANY) All Rights Reserved.
+   </copyright>
+
+   <license url="https://www.magicleap.com">
+      Magic Leap, Inc. Confidential and Proprietary
+   </license>
+
+   <plugin
+         id="com.magicleap.common.log"
+         download-size="12"
+         install-size="19"
+         version="1.0.0.201812070037"
+         unpack="false"/>
+
+   <plugin
+         id="com.magicleap.common.log.log4j"
+         download-size="4"
+         install-size="6"
+         version="1.0.0.201812070037"
+         fragment="true"/>
+
+   <plugin
+         id="org.eclipse.fx.core.log4j"
+         download-size="12"
+         install-size="21"
+         version="3.3.0.201805280847"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.log4j"
+         download-size="405"
+         install-size="775"
+         version="1.2.15.v201012070815"
+         unpack="false"/>
+
+   <plugin
+         id="com.magicleap.common.log.ui"
+         download-size="37"
+         install-size="67"
+         version="1.0.0.201812070037"
+         unpack="false"/>
+
+   <plugin
+         id="com.magicleap.common.log.ui.log4j"
+         download-size="4"
+         install-size="4"
+         version="1.0.0.201812070037"
+         fragment="true"
+         unpack="false"/>
+
+</feature>

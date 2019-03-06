@@ -1,0 +1,7 @@
+
+LIBPATHS=$(GLFW_LIBS)
+SHLIBS.win=glfw3dll
+SHLIBS.osx=glfw.3
+SHLIBS.default=glfw
+INCS=$(GLFW_INCS)
+

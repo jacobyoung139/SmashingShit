@@ -1,0 +1,15 @@
+KIND = program
+SRCS = main.cpp
+
+DEFS.device = ML_DEVICE USE_GLFW=0
+DEFS.win = ML_WINDOWS USE_GLFW=1
+DEFS.osx = ML_OSX USE_GLFW=1
+DEFS.linux = ML_LINUX USE_GLFW=1
+
+USES = ml_sdk OpenGL stdc++
+USES.device =
+USES.win,osx,linux = glfw glad
+
+OPTIONS = standard-c++/11 exceptions/on warn/on
+SHLIBS.linux = pthread
+

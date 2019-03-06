@@ -1,0 +1,52 @@
+# Magic Leap coding guidelines for security and conformance between OSes
+
+CFLAGS.msvc=-utf-8
+CXXFLAGS.msvc=-utf-8
+
+CFLAGS.gcc_lumin,gcc_win,gcc_linux=-finput-charset=utf-8
+CXXFLAGS.gcc_lumin,gcc_win,gcc_linux=-finput-charset=utf-8
+# ^^^ on OSX, gcc goes to clang, and this option not allowed there
+
+# act like real C++
+CXXFLAGS.msvc=-Zc:referenceBinding,threadSafeInit,rvalueCast,wchar_t,forScope
+
+# Disable minimal rebuild on msvc since make is already responsible for doing that work.
+# Having this enabled can frequently lead to false positives since msvc uses a separate mechanism
+# for determining if a file needs to be rebuilt.
+CFLAGS.msvc=-Gm-
+CXXFLAGS.msvc=-Gm-
+
+# These come from the NDK toolchain file build/core/toolchains/aarch64-linux-android-4.9|aarch64-linux-android-clang/setup.mk
+# and common included fragments.
+CFLAGS.lumin=-fpic \
+        -ffunction-sections \
+        -funwind-tables \
+        -fstack-protector-strong \
+        -no-canonical-prefixes \
+        -Wa,--noexecstack \
+        -Wformat \
+        -Werror=format-security
+CXXFLAGS.lumin=-fpic \
+        -ffunction-sections \
+        -funwind-tables \
+        -fstack-protector-strong \
+        -no-canonical-prefixes \
+        -Wa,--noexecstack \
+        -Wformat \
+        -Werror=format-security
+
+CFLAGS.lumin_clang=\
+        -Wno-invalid-command-line-argument \
+        -Wno-unused-command-line-argument
+CXXFLAGS.lumin_clang=\
+        -Wno-invalid-command-line-argument \
+        -Wno-unused-command-line-argument
+
+LDFLAGS.lumin=\
+        -no-canonical-prefixes \
+        -Wl,--no-undefined \
+        -Wl,-z,noexecstack \
+        -Wl,-z,relro \
+        -Wl,-z,now \
+        -Wl,--enable-new-dtags \
+        '-Wl,-rpath=$ORIGIN'

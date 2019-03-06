@@ -1,0 +1,46 @@
+KIND = program
+SRCS = main.cpp
+USES = ml_sdk
+
+# Examples of other bits you may need:
+#
+# Includes:
+#   INCS = include
+#   INCS.msvc = inc/win32
+# 
+# Macro definitions:
+#   DEFS = MYFLAG   MYVAL=123
+#   DEFS.debug = DEBUG
+#
+#
+# Using prebuilt content from the SDK:
+#   USES = sockets
+#
+#   (Run 'mabu --print-components' to see the available ones.)
+#
+#
+# REFS = myOtherProject
+#
+#   (Make a 'myOtherProject.mabu' file, with 'KIND=static' or 'KIND=shared',
+#   and mabu will build and link against it automatically.)
+#
+#
+# For C++ STL code:
+#
+#   OPTIONS = stl/libc++
+#   OPTIONS = stl/libgnustl
+#
+#
+# Other likely flags:
+#
+#   OPTIONS = standard-c++/14 exceptions/on warn/high optimize/on
+#
+# (Run 'mabu --print-options' to see the available ones.)
+#
+#
+# For adding external shared libs to the project:
+#
+#   STLIBS = z   # for libz.a
+#   SHLIBS.linux = pthread dl   # for lib*.so
+
+

@@ -1,0 +1,5 @@
+# "high" should include unused locals, unused expressions, unused arguments
+CFLAGS.gcc,clang=-Wall -Wunused-parameter
+CXXFLAGS.gcc,clang=-Wall -Wunused-parameter
+CFLAGS.msvc=-W4
+CXXFLAGS.msvc=-W4

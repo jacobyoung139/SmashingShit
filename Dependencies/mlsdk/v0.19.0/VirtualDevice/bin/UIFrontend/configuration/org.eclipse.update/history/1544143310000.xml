@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config date="1544143184169" transient="false">
+	<site updateable="true" url="platform:/base/" enabled="true" policy="USER-EXCLUDE">
+		<feature id="com.magicleap.vdf.jre.feature" version="1.0.0.201812070037" url="features/com.magicleap.vdf.jre.feature_1.0.0.201812070037/">
+		</feature>
+		<feature id="org.eclipse.fx.target.rcp4.feature" version="3.3.0.201805280847" url="features/org.eclipse.fx.target.rcp4.feature_3.3.0.201805280847/">
+		</feature>
+		<feature id="org.eclipse.rcp" version="4.7.2.v20171130-0510" url="features/org.eclipse.rcp_4.7.2.v20171130-0510/">
+		</feature>
+		<feature id="org.eclipse.emf.ecore" version="2.13.0.v20170609-0707" url="features/org.eclipse.emf.ecore_2.13.0.v20170609-0707/">
+		</feature>
+		<feature id="com.magicleap.vdf.feature" version="1.0.0.201812070037" url="features/com.magicleap.vdf.feature_1.0.0.201812070037/">
+		</feature>
+		<feature id="org.eclipse.e4.rcp" version="1.6.2.v20171129-0543" url="features/org.eclipse.e4.rcp_1.6.2.v20171129-0543/">
+		</feature>
+		<feature id="org.eclipse.emf.common" version="2.13.0.v20170609-0707" url="features/org.eclipse.emf.common_2.13.0.v20170609-0707/">
+		</feature>
+		<feature id="com.magicleap.common.log.feature" version="1.0.0.201812070037" url="features/com.magicleap.common.log.feature_1.0.0.201812070037/">
+		</feature>
+	</site>
+</config>

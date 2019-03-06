@@ -1,0 +1,24 @@
+{
+  "ManifestType": "Configuration",
+  "DeviceName": "KeyboardMouse",
+  "DeviceLabel": "Peripheral - Key/Mouse",
+  "ConfigurationSettings": {
+    "BindingsVersion": 2,
+    "DeviceType": "keyboardMouse",
+    "OS": "Any",
+    "Action-MoveHeadposeNegZ": [{"Input":"KeyCode-W"}],
+    "Action-MoveHeadposePosZ": [{"Input":"KeyCode-S"}],
+    "Action-MoveHeadposeNegY": [{"Input":"KeyCode-Q"}],
+    "Action-MoveHeadposePosY": [{"Input":"KeyCode-E"}],
+    "Action-MoveHeadposeNegX": [{"Input":"KeyCode-Left"}],
+    "Action-MoveHeadposePosX": [{"Input":"KeyCode-Right"}],
+    "Action-RotateHeadposeNegY": [{"Input":"KeyCode-A"}],
+    "Action-RotateHeadposePosY": [{"Input":"KeyCode-D"}],
+    "Action-RotateHeadposeY": [{"Input":"MouseMove-DeltaX"}],
+    "Action-RotateHeadposeX": [{"Input":"MouseMove-DeltaY"}],
+    "Action-RotateHeadposeZ": [{"Input":"MouseMove-ScrollWheelX"}],
+    "Action-MoveHeadposeZ": [{"Input":"MouseMove-ScrollWheelY"}],
+    "MouseSensitivity-ScrollWheelY": -1.0 ,  // match ScrollWheelY with RUB notion of zooming "in" moving in negative Z
+    "KeySensitivity": 0.1
+  }
+}

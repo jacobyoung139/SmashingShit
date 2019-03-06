@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modelInfo xmlns="http://www.magicleap.com/uidesigner/component/model"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="vdf"
+    version="1.0.0" rootNodeTypeId="ControlPanel"
+    xsi:schemaLocation="http://www.magicleap.com/uidesigner/component/model platform:/resource/com.magicleap.uidesigner.rcp.component.model/model/model.xsd">
+
+    <!-- Types of property values needed by VDF -->
+    <typeFileInfos>
+        <typeFileInfo typeId="booleanList" filePath="value.types" />
+        <typeFileInfo typeId="integerList" filePath="value.types" />
+        <typeFileInfo typeId="floatList" filePath="value.types" />
+        <typeFileInfo typeId="stringList" filePath="value.types" />
+        <typeFileInfo typeId="vec3" filePath="value.types" />
+        <typeFileInfo typeId="quat" filePath="value.types" />
+        <typeFileInfo typeId="rgb" filePath="value.types" />
+        <typeFileInfo typeId="rgba" filePath="value.types" />
+        <!-- Control Panel Types -->
+        <typeFileInfo typeId="MLHeadTrackingMode" filePath="control.types"/>
+        <typeFileInfo typeId="MLHeadTrackingError" filePath="control.types"/>
+        <typeFileInfo typeId="MLInputControllerType" filePath="control.types"/>
+        <typeFileInfo typeId="MLInputControllerDof" filePath="control.types"/>
+        <typeFileInfo typeId="MLInputControllerTouchpadGesture" filePath="control.types"/>
+        <typeFileInfo typeId="MLInputControllerTouchpadGestureState" filePath="control.types"/>
+        <typeFileInfo typeId="transform" filePath="control.types"/>
+        <typeFileInfo typeId="transform_with_scale" filePath="control.types"/>
+        <typeFileInfo typeId="MLEyeTrackingState" filePath="control.types"/>
+        <typeFileInfo typeId="MLEyeTrackingError" filePath="control.types"/>
+        <typeFileInfo typeId="MLEyeTrackingConfidence" filePath="control.types"/>
+        <typeFileInfo typeId="MLEyeTrackingCalibrationStatus" filePath="control.types"/>
+        <typeFileInfo typeId="Keypose" filePath="control.types"/>
+        <typeFileInfo typeId="MLImageTrackerTargetStatus" filePath="control.types"/>
+        <typeFileInfo typeId="InputController" filePath="control.types"/>
+        <typeFileInfo typeId="Gesture" filePath="control.types"/>
+        <typeFileInfo typeId="ImageTarget" filePath="control.types"/>
+        <typeFileInfo typeId="ImageTargets" filePath="control.types"/>
+        <typeFileInfo typeId="SelectionNodes" filePath="control.types"/>
+    </typeFileInfos>
+
+    <!-- This is not used, just to please property sheet framework. -->
+    <categoryInfos>
+        <categoryInfo id="none.category" label="No Category" />
+    </categoryInfos>
+
+    <!-- No static node type is needed by VDF right now. All is dynamically created. 
+         Again, this is just to please the framework. 
+     -->
+    <nodeTypeInfos>
+        <nodeTypeInfo nodeTypeId="vdf.sparseDevice" filePath="vdf.nodetypes" label="Sparse Device"/>
+        <!-- Control Panel Nodes -->
+        <nodeTypeInfo nodeTypeId="ControlPanel" filePath="control.nodetypes" />
+        <nodeTypeInfo nodeTypeId="Transform" filePath="control.nodetypes" />
+        <nodeTypeInfo nodeTypeId="HeadTracking" filePath="control.nodetypes" />
+        <nodeTypeInfo nodeTypeId="InputControllers" filePath="control.nodetypes" />
+        <nodeTypeInfo nodeTypeId="EyeTracking" filePath="control.nodetypes" />
+        <nodeTypeInfo nodeTypeId="Hands" filePath="control.nodetypes" />
+        <nodeTypeInfo nodeTypeId="ImageTracking" filePath="control.nodetypes" />
+        <nodeTypeInfo nodeTypeId="Recorder" filePath="control.nodetypes" />
+        <nodeTypeInfo nodeTypeId="Selection" filePath="control.nodetypes" />
+    </nodeTypeInfos>
+</modelInfo>

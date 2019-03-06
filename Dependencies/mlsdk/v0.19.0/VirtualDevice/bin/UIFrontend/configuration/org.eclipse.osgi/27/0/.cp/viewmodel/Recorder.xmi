@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewmodel:View
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:viewmodel="com.magicleap.uidesigner.rcp.properties.viewmodel"
+    xsi:schemaLocation="com.magicleap.uidesigner.rcp.properties.viewmodel ../../com.magicleap.uidesigner.properties.model/model/viewmodel.ecore"
+    viewId="vdf.recorder"
+    typeId="Recorder"
+    inherit="false">
+  <children
+      xsi:type="viewmodel:Group"
+      label="Recorder">
+    <children
+        xsi:type="viewmodel:Control"
+        viewId="recordingPath"
+        id="recordingPath"/>
+    <children
+        xsi:type="viewmodel:Control"
+        viewId="recording"
+        id="recording"/>
+  </children>
+  <children
+      xsi:type="viewmodel:Group"
+      label="Playback">
+    <children
+        xsi:type="viewmodel:Control"
+        viewId="playbackProgress"
+        id="playbackProgress"/>
+    <children
+        xsi:type="viewmodel:Control"
+        viewId="playbackPath"
+        id="playbackPath"/>
+    <children
+        xsi:type="viewmodel:Control"
+        viewId="playing"
+        id="playing"/>
+  </children>
+  <generationAnnotation
+      generate="NONE"/>
+  <sortingAnnotation
+      sort="NONE"/>
+</viewmodel:View>

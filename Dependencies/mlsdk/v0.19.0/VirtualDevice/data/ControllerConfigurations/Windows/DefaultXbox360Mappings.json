@@ -1,0 +1,54 @@
+{
+  "ManifestType": "Configuration",
+  "DeviceName": "Xbox360Controller",
+  "DeviceLabel": "Xbox 360 Controller",
+  "ConfigurationSettings": {
+    "BindingsVersion": 2,
+    "DeviceType": "controller",
+    "OS": "Windows",
+    "ActionInputLabels" : {
+      "Axis-0": "Left thumbstick X-Axis",
+      "Axis-1": "Left thumbstick Y-Axis",
+      "Axis-2": "Right thumbstick X-Axis",
+      "Axis-3": "Right thumbstick Y-Axis",
+      "Axis-4": "Left trigger",
+      "Axis-5": "Right trigger",
+      "Button-0": "'A' button",
+      "Button-1": "'B' button",
+      "Button-2": "'X' button",
+      "Button-3": "'Y' button",
+      "Button-4": "Left bumper",
+      "Button-5": "Right bumper",
+      "Button-6": "Back button",
+      "Button-7": "Start button",
+      "Button-8": "Left thumbstick click",
+      "Button-9": "Right thumbstick click",
+      "Button-10": "D-pad up",
+      "Button-11": "D-pad right",
+      "Button-12": "D-pad down",
+      "Button-13": "D-pad left"
+      // Windows doesn't register Xbox button
+    },
+    "Axis-Sensitivity-1": -1.0,
+    "Action-MoveHeadposeX": [{"Input":"Axis-0"}],
+    "Action-MoveHeadposeZ": [{"Input":"Axis-1"}],
+    "Action-RotateHeadposeX": [{"Input":"Axis-3"}],
+    "Action-RotateHeadposeY": [{"Input":"Axis-2"}],
+    "Action-ToggleAbsoluteHeadposeMovement": [{"Input":"Button-3"}], // Y-button on Xbox controller.
+    "Action-HandGestureThumbLeft": [{"Input":"Button-4"}], // Left bumper.
+    "Action-HandGestureThumbRight": [{"Input":"Button-5"}], // Right bumper.
+    "Action-MoveInputControllerNegX": [{"Input":"Button-13"}], // D-pad left.
+    "Action-MoveInputControllerPosX": [{"Input":"Button-11"}], // D-pad right.
+    "Action-MoveInputControllerNegZ": [{"Input":"Button-10"}], // D-pad up.
+    "Action-MoveInputControllerPosZ": [{"Input":"Button-12"}], // D-pad down.
+    "Action-ResetInputControllerTransform": [{"Input":"Button-1"}], // B-button.
+    "Action-RotateInputControllerX": [{"Input":"Axis-4"}], // Left trigger.
+    "Action-InputControllerTrigger": [{"Input":"Axis-5"}], // Right trigger.
+    "Action-ResetEyeFixation": [{"Input":"Button-8"}], // Left thumbstick click.
+    "Action-InputControllerGestureTap": [{"Input":"Button-0"}], // A-button.
+    "Axis-Deadzone-1": 0.2,
+    "Axis-Deadzone-2": 0.2,
+    "Axis-Deadzone-3": 0.2,
+    "Global-Axis-Sensitivity":1.0
+  }
+}

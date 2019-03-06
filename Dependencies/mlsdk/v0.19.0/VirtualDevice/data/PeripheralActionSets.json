@@ -1,0 +1,573 @@
+// Action Sets define the grouping of low level button and axis actions
+// into user-visible groups.
+//
+// The "Actions" are arrays of peripheral actions that are grouped underneath, 
+// lacking the "Action-" prefix that appears in the ConfigurationProperty.  
+// If "Actions" is omitted from a definition, its default is a single-element 
+// list using the value of "Name".
+{
+    "ManifestType": "ActionSets",
+    "Version": 1,
+    "CategoryActions": [
+        {
+            "CategoryPath": "headpose",
+            "Label": "Head",
+            "Actions": [
+                {
+                    "Name": "ToggleAbsoluteHeadposeMovement", 
+                    "Label": "Toggle Local/World Movement",
+                    "Description": "Toggles whether headpose moves in the headpose's current direction or in world coordinates"
+                }
+            ]
+        },        
+        {
+            "CategoryPath": "headpose/pos",
+            "Label": "Position",
+            "Actions": [
+                {
+                    "Name": "MoveHeadposeX", 
+                    "Label": "Left/Right",
+                    "Actions": [ "MoveHeadposeX", "MoveHeadposeNegX", "MoveHeadposePosX" ],
+                    "Description": "Moves the headpose along the X axis."
+                },
+                {
+                    "Name": "MoveHeadposeY", 
+                    "Label": "Down/Up",
+                    "Actions": [ "MoveHeadposeY", "MoveHeadposeNegY", "MoveHeadposePosY" ],
+                    "Description": "Moves the headpose along the Y axis."
+                },
+                {
+                    "Name": "MoveHeadposeZ", 
+                    "Label": "Out/In",
+                    "Actions": [ "MoveHeadposeZ", "MoveHeadposeNegZ", "MoveHeadposePosZ" ],
+                    "Description": "Moves the headpose along the Z axis."
+                }
+            ]
+        },
+        {
+            "CategoryPath": "headpose/rot",
+            "Label": "Rotation",
+            "Actions": [
+                {
+                    "Name": "RotateHeadposeX", 
+                    "Label": "Pitch",
+                    "Actions": [ "RotateHeadposeX", "RotateHeadposeNegX", "RotateHeadposePosX" ],
+                    "Description": "Rotates the headpose around the X axis."
+                },
+                {
+                    "Name": "RotateHeadposeY", 
+                    "Label": "Yaw",
+                    "Actions": [ "RotateHeadposeY", "RotateHeadposeNegY", "RotateHeadposePosY" ],
+                    "Description": "Rotates the headpose around the Y axis."
+                },
+                {
+                    "Name": "RotateHeadposeZ", 
+                    "Label": "Roll",
+                    "Actions": [ "RotateHeadposeZ", "RotateHeadposeNegZ", "RotateHeadposePosZ" ],
+                    "Description": "Rotates the headpose around the Z axis."
+                }
+            ]
+        },
+        {
+            "CategoryPath": "hands",
+            "Label": "Hands",
+            "Actions": [
+            ]
+        },
+        {
+            "CategoryPath": "hands/left",
+            "Label": "Left",
+            "Actions": [
+            ]
+        },
+        {
+            "CategoryPath": "hands/left/keyposes",
+            "Label": "Keyposes",
+            "Actions": [
+                {
+                    "Name": "HandGestureNoHandLeft", 
+                    "Label": "(No Hand)",
+                    "Description": "Triggers the indication that no left hand was detected."
+                },
+                // FIXME: we need one for No Keypose (DTOOLS-5320)
+                {
+                    "Name": "HandGestureFingerLeft", 
+                    "Label": "Finger",
+                    "Description": "Triggers the left hand Index Finger keypose."
+                },
+                {
+                    "Name": "HandGestureFistLeft", 
+                    "Label": "Fist",
+                    "Description": "Triggers the left hand Fist keypose."
+                },
+                {
+                    "Name": "HandGesturePinchLeft", 
+                    "Label": "Pinch",
+                    "Description": "Triggers the left hand Pinch keypose."
+                },
+                {
+                    "Name": "HandGestureThumbLeft", 
+                    "Label": "Thumb",
+                    "Description": "Triggers the left hand Closed Fist with Thumb Pointed Up keypose."
+                },
+                {
+                    "Name": "HandGestureLLeft", 
+                    "Label": "L",
+                    "Description": "Triggers the left hand L Shape keypose."
+                },
+                {
+                    "Name": "HandGestureOpenHandBackLeft", 
+                    "Label": "Open Hand Back",
+                    "Description": "Triggers the left hand Open Hand Back keypose."
+                },
+                {
+                    "Name": "HandGestureOkLeft", 
+                    "Label": "OK",
+                    "Description": "Triggers the left hand OK keypose."
+                },
+                {
+                    "Name": "HandGestureCLeft", 
+                    "Label": "C",
+                    "Description": "Triggers the left hand C keypose."
+                }
+            ]
+        },
+        {
+            "CategoryPath": "hands/left/pos",
+            "Label": "Position",
+            "Actions": [
+                {
+                    "Name": "MoveHandCenterXLeft", 
+                    "Label" : "Move Hand Center Left/Right", 
+                    "Actions": [ "MoveHandCenterXLeft", "MoveHandCenterXLeftNeg", "MoveHandCenterXLeftPos" ],
+                    "Description": "Moves the hand center in world coordinates along the X axis"
+                },
+                {
+                    "Name": "MoveHandCenterYLeft", 
+                    "Label" : "Move Hand Center Down/Up", 
+                    "Actions": [ "MoveHandCenterYLeft", "MoveHandCenterYLeftNeg", "MoveHandCenterYLeftPos" ],
+                    "Description": "Moves the hand center in world coordinates along the Y axis"
+                },
+                {
+                    "Name": "MoveHandCenterZLeft", 
+                    "Label" : "Move Hand Center Forward/Back", 
+                    "Actions": [ "MoveHandCenterZLeft", "MoveHandCenterZLeftNeg", "MoveHandCenterZLeftPos" ],
+                    "Description": "Moves the hand center in world coordinates along the Z axis"
+                },
+
+                {
+                    "Name": "MoveHandNormalizedDepthXLeft", 
+                    "Label" : "Move Hand Center Left/Right", 
+                    "Actions": [ "MoveHandNormalizedDepthXLeft", "MoveHandNormalizedDepthXLeftNeg", "MoveHandNormalizedDepthXLeftPos" ],
+                    "Description": "Moves the hand center in the normalized [-1, 1] range along the X axis"
+                },
+                {
+                    "Name": "MoveHandNormalizedDepthYLeft", 
+                    "Label" : "Move Hand Center Down/Up", 
+                    "Actions": [ "MoveHandNormalizedDepthYLeft", "MoveHandNormalizedDepthYLeftNeg", "MoveHandNormalizedDepthYLeftPos" ],
+                    "Description": "Moves the hand center in the normalized [-1, 1] range along the Y axis"
+                },
+                {
+                    "Name": "MoveHandNormalizedDepthZLeft", 
+                    "Label" : "Move Hand Center Forward/Back", 
+                    "Actions": [ "MoveHandNormalizedDepthZLeft", "MoveHandNormalizedDepthZLeftNeg", "MoveHandNormalizedDepthZLeftPos" ],
+                    "Description": "Moves the hand center in the normalized [-1, 1] range along the Z axis"
+                }                
+            ]
+        },
+        {
+            "CategoryPath": "hands/left/rot",
+            "Label": "Rotation",
+            "Actions": [
+                {
+                    "Name": "RotateHandCenterXLeft", 
+                    "Label" : "Rotate Hand Center Pitch", 
+                    "Actions": [ "RotateHandCenterXLeft", "RotateHandCenterXLeftNeg", "RotateHandCenterXLeftPos" ],
+                    "Description": "Rotates the hand center around the X axis"
+                },
+                {
+                    "Name": "RotateHandCenterYLeft", 
+                    "Label" : "Rotate Hand Center Yaw", 
+                    "Actions": [ "RotateHandCenterYLeft", "RotateHandCenterYLeftNeg", "RotateHandCenterYLeftPos" ],
+                    "Description": "Rotates the hand center around the Y axis"
+                },
+                {
+                    "Name": "RotateHandCenterZLeft", 
+                    "Label" : "Rotate Hand Center Roll", 
+                    "Actions": [ "RotateHandCenterZLeft", "RotateHandCenterZLeftNeg", "RotateHandCenterZLeftPos" ],
+                    "Description": "Rotates the hand center around the Z axis"
+                }
+            ]
+        },
+        {
+            "CategoryPath": "hands/right",
+            "Label": "Right",
+            "Actions": [
+            ]
+        },
+        {
+            "CategoryPath": "hands/right/keyposes",
+            "Label": "Keyposes",
+            "Actions": [
+                {
+                    "Name": "HandGestureNoHandRight", 
+                    "Label": "(No Hand)",
+                    "Description": "Triggers the indication that no right hand was detected."
+                },
+                // FIXME: we need one for No Keypose (DTOOLS-5320)
+                {
+                    "Name": "HandGestureFingerRight", 
+                    "Label": "Finger",
+                    "Description": "Triggers the right hand Index Finger keypose."
+                },
+                {
+                    "Name": "HandGestureFistRight", 
+                    "Label": "Fist",
+                    "Description": "Triggers the right hand Fist keypose."
+                },
+                {
+                    "Name": "HandGesturePinchRight", 
+                    "Label": "Pinch",
+                    "Description": "Triggers the right hand Pinch keypose."
+                },
+                {
+                    "Name": "HandGestureThumbRight", 
+                    "Label": "Thumb",
+                    "Description": "Triggers the right hand Closed Fist with Thumb Pointed Up keypose."
+                },
+                {
+                    "Name": "HandGestureLRight", 
+                    "Label": "L",
+                    "Description": "Triggers the right hand L Shape keypose."
+                },
+                {
+                    "Name": "HandGestureOpenHandBackRight", 
+                    "Label": "Open Hand Back",
+                    "Description": "Triggers the right hand Open Hand Back keypose."
+                },
+                {
+                    "Name": "HandGestureOkRight", 
+                    "Label": "OK",
+                    "Description": "Triggers the right hand OK keypose."
+                },
+                {
+                    "Name": "HandGestureCRight", 
+                    "Label": "C",
+                    "Description": "Triggers the right hand C keypose."
+                }
+            ]
+        },
+        {
+            "CategoryPath": "hands/right/pos",
+            "Label": "Position",
+            "Actions": [
+                {
+                    "Name": "MoveHandCenterXRight", 
+                    "Label" : "Move Hand Center Left/Right", 
+                    "Actions": [ "MoveHandCenterXRight", "MoveHandCenterXRightNeg", "MoveHandCenterXRightPos" ],
+                    "Description": "Moves the hand center in world coordinates along the X axis"
+                },  
+                {
+                    "Name": "MoveHandCenterYRight", 
+                    "Label" : "Move Hand Center Down/Up", 
+                    "Actions": [ "MoveHandCenterYRight", "MoveHandCenterYRightNeg", "MoveHandCenterYRightPos" ],
+                    "Description": "Moves the hand center in world coordinates along the Y axis"
+                },
+                {
+                    "Name": "MoveHandCenterZRight", 
+                    "Label" : "Move Hand Center Forward/Back", 
+                    "Actions": [ "MoveHandCenterZRight", "MoveHandCenterZRightNeg", "MoveHandCenterZRightPos" ],
+                    "Description": "Moves the hand center in world coordinates along the Z axis"
+                }
+            ]
+        },
+        {
+            "CategoryPath": "hands/right/rot",
+            "Label": "Rotation",
+            "Actions": [
+                {
+                    "Name": "RotateHandCenterXRight", 
+                    "Label" : "Rotate Hand Center Pitch", 
+                    "Actions": [ "RotateHandCenterXRight", "RotateHandCenterXRightNeg", "RotateHandCenterXRightPos" ],
+                    "Description": "Rotates the hand center around the X axis"
+                },
+                {
+                    "Name": "RotateHandCenterYRight", 
+                    "Label" : "Rotate Hand Center Yaw", 
+                    "Actions": [ "RotateHandCenterYRight", "RotateHandCenterYRightNeg", "RotateHandCenterYRightPos" ],
+                    "Description": "Rotates the hand center around the Y axis"
+                },
+                {
+                    "Name": "RotateHandCenterZRight", 
+                    "Label" : "Rotate Hand Center Roll", 
+                    "Actions": [ "RotateHandCenterZRight", "RotateHandCenterZRightNeg", "RotateHandCenterZRightPos" ],
+                    "Description": "Rotates the hand center around the Z axis"
+                },
+
+                {
+                    "Name": "MoveHandNormalizedDepthXRight", 
+                    "Label" : "Move Hand Center Left/Right", 
+                    "Actions": [ "MoveHandNormalizedDepthXRight", "MoveHandNormalizedDepthXRightNeg", "MoveHandNormalizedDepthXRightPos" ],
+                    "Description": "Moves the hand center in the normalized [-1, 1] range along the X axis"
+                },
+                {
+                    "Name": "MoveHandNormalizedDepthYRight", 
+                    "Label" : "Move Hand Center Down/Up", 
+                    "Actions": [ "MoveHandNormalizedDepthYRight", "MoveHandNormalizedDepthYRightNeg", "MoveHandNormalizedDepthYRightPos" ],
+                    "Description": "Moves the hand center in the normalized [-1, 1] range along the Y axis"
+                },
+                {
+                    "Name": "MoveHandNormalizedDepthZRight", 
+                    "Label" : "Move Hand Center Forward/Back", 
+                    "Actions": [ "MoveHandNormalizedDepthZRight", "MoveHandNormalizedDepthZRightNeg", "MoveHandNormalizedDepthZRightPos" ],
+                    "Description": "Moves the hand center in the normalized [-1, 1] range along the Z axis"
+                }
+            ]
+        },
+        // we are not porting the moving of each keypoint here!
+
+        //=========================================================================================
+        // Note: the $NUM below is nothing fancy, just code-driven substitution to avoid
+        // duplicating all this twice (or more)
+        {
+            "CategoryPath": "control$NUM",
+            "Label": "Control $NUM",
+            "Actions": [
+                {
+                    "Name": "ToggleAbsoluteInputControllerMovement", 
+                    "Label": "Toggle Local/World Movement",
+                    "Description": "Toggles whether the control moves in the control's current direction or in world coordinates"
+                },
+                {
+                    "Name": "ResetInputControllerTransform",
+                    "Label": "Reset Transform",
+                    "Description": "Resets the control's transform to identity"
+                }
+            ]
+        },
+        {
+            "CategoryPath": "control$NUM/pos",
+            "Label": "Position",
+            "Actions": [
+                {
+                    "Name": "MoveInputControllerX", 
+                    "Label": "Left/Right",
+                    "Actions": [ "MoveInputControllerX", "MoveInputControllerNegX", "MoveInputControllerPosX" ],
+                    "Description": "Moves the control along the X axis."
+                },
+                {
+                    "Name": "MoveInputControllerY", 
+                    "Label": "Down/Up",
+                    "Actions": [ "MoveInputControllerY", "MoveInputControllerNegY", "MoveInputControllerPosY" ],
+                    "Description": "Moves the control along the Y axis."
+                },
+                {
+                    "Name": "MoveInputControllerZ", 
+                    "Label": "Out/In",
+                    "Actions": [ "MoveInputControllerZ", "MoveInputControllerNegZ", "MoveInputControllerPosZ" ],
+                    "Description": "Moves the control along the Z axis."
+                }
+            ]
+        },
+        {
+            "CategoryPath": "control$NUM/rot",
+            "Label": "Rotation",
+            "Actions": [
+                {
+                    "Name": "RotateInputControllerX", 
+                    "Label": "Pitch",
+                    "Actions": [ "RotateInputControllerX", "RotateInputControllerNegX", "RotateInputControllerPosX" ],
+                    "Description": "Rotates the control around the X axis."
+                },
+                {
+                    "Name": "RotateInputControllerY", 
+                    "Label": "Yaw",
+                    "Actions": [ "RotateInputControllerY", "RotateInputControllerNegY", "RotateInputControllerPosY" ],
+                    "Description": "Rotates the control around the Y axis."
+                },
+                {
+                    "Name": "RotateInputControllerZ", 
+                    "Label": "Roll",
+                    "Actions": [ "RotateInputControllerZ", "RotateInputControllerNegZ", "RotateInputControllerPosZ" ],
+                    "Description": "Rotates the control around the Z axis."
+                }
+            ]
+        },
+        {
+            "CategoryPath": "control$NUM/button",
+            "Label": "Buttons",
+            "Actions": [
+                {
+                    "Name": "InputControllerButtonBumper", 
+                    "Label": "Bumper",
+                    "Description": "Fires the Bumper button."
+                },
+                {
+                    "Name": "InputControllerButtonHomeTap", 
+                    "Label": "Home Tap",
+                    "Description": "Fires the Home Tap button.  On the Control, this is fired after holding down the button for one second."
+                },
+                {
+                    // NOTE: this case has an analog and a button input, but not "positive" or "negative"
+                    "Name": "InputControllerTrigger", 
+                    "Label": "Trigger",
+                    "Actions": [ "InputControllerTrigger", "InputControllerTriggerDown" ],
+                    "Description": "Fires the Trigger.  A button input signals 1.0 when pressed and 0.0 when released.  An analog input continuously drives the trigger pressure."
+                }
+            ]
+        },
+        {
+            "CategoryPath": "control$NUM/touchpad",
+            "Label": "Touchpad",
+            "Description": "These actions simulate moving and touching the touchpad.\nNOTE: under Simulator mode, these do not contribute to triggering of gestures.",
+            "Actions": [
+                {
+                    "Name": "InputControllerTouchX0", 
+                    "Label": "Touch X-Axis (finger 1)",
+                    "Description": "Changes the first finger's X position on the touchpad."
+                },
+                {
+                    "Name": "InputControllerTouchX1", 
+                    "Label": "Touch X-Axis (finger 2)",
+                    "Description": "Changes the second finger's X position on the touchpad."
+                },
+                {
+                    "Name": "InputControllerTouchY0", 
+                    "Label": "Touch Y-Axis (finger 1)",
+                    "Description": "Changes the first finger's X position on the touchpad."
+                },
+                {
+                    "Name": "InputControllerTouchY1", 
+                    "Label": "Touch Y-Axis (finger 2)",
+                    "Description": "Changes the second finger's Y position on the touchpad."
+                },
+                {
+                    "Name": "InputControllerTouchZ0", 
+                    "Label": "Touch Press (finger 1)",
+                    "Description": "Indicates the first finger is pressing on the touchpad."
+                },
+                {
+                    "Name": "InputControllerTouchZ1", 
+                    "Label": "Touch Press (finger 2)",
+                    "Description": "Indicates the second finger is pressing on the touchpad."
+                },
+                {
+                    "Name": "InputControllerEndTouch0", 
+                    "Label": "Touch Release (finger 1)",
+                    "Description": "Indicates the first finger is released from the touchpad."
+                },
+                {
+                    "Name": "InputControllerEndTouch1", 
+                    "Label": "Touch Release (finger 2)",
+                    "Description": "Indicates the second finger is released on the touchpad."
+                }
+            ]
+        },
+        {
+            "CategoryPath": "control$NUM/touchpad/gestures",
+            "Label": "Gestures",
+            "Description": "These actions simulate a sequence of touchpad presses and/or movements over time.\nNote: under Simulator mode, only the gesture itself is triggered, not the individual touches and movements that contribute to it.",
+            "Actions": [
+                {
+                    "Name": "InputControllerGestureTap", 
+                    "Label": "Tap",
+                    "Description": "Indicates a Tap gesture was detected."
+                },
+                {
+                    "Name": "InputControllerGestureForceTapDown", 
+                    "Label": "Force Tap Down",
+                    "Description": "Indicates a Force Tap gesture was performed."
+                },
+                {
+                    "Name": "InputControllerGestureSecondForceDown", 
+                    "Label": "Force Tap Down (2)",
+                    "Description": "Indicates a Force Tap gesture, at higher pressure than Force Tap Down, was performed."
+                },
+                {
+                    "Name": "InputControllerGestureForceTapUp", 
+                    "Label": "Force Tap Up",
+                    "Description": "Indicates a finger was released after a Force Tap Down was performed."
+                },
+                {
+                    "Name": "InputControllerGestureLongHold", 
+                    "Label": "Long Hold",
+                    "Description": "Indicates a finger has pressed down on the touchpad in the same place for longer than one second."
+                },
+                {
+                    "Name": "InputControllerGestureForceDwell", 
+                    "Label": "Force Dwell",
+                    "Description": "Indicates a finger has pressed on the touchpad for longer than one second."
+                },
+                {
+                    "Name": "InputControllerGestureRadialScroll", 
+                    "Label": "Radial Scroll",
+                    "Description": "Indicates a finger has circled the touchpad." 
+                },
+                {
+                    "Name": "InputControllerGestureSwipe", 
+                    "Label": "Swipe",
+                    "Description": "Indicates a finger has traversed the touchpad quickly."  //???
+                },
+                {
+                    "Name": "InputControllerGestureScroll", 
+                    "Label": "Scroll",
+                    "Description": "Indicates a finger has traversed the touchpad slowly."  //???
+                },
+                {
+                    "Name": "InputControllerGesturePinch", 
+                    "Label": "Pinch",
+                    "Description": "Indicates two fingers have formed a pinch gesture."
+                }
+            ]
+        },
+        {
+            "CategoryPath": "eyes",
+            "Label": "Eyes",
+            "Description": "These actions simulate eye tracking.",
+            "Actions": [
+                {
+                    "Name": "ResetEyeFixation",
+                    "Label": "Reset",
+                    "Description": "Resets the fixation (focus) point."
+                },
+                {
+                    "Name": "BlinkEyeLeft", 
+                    "Label": "Blink Left Eye",
+                    "Description": "Triggers a left eye blink."
+                },
+                {
+                    "Name": "BlinkEyeRight", 
+                    "Label": "Blink Right Eye",
+                    "Description": "Triggers a right eye blink."
+                }
+            ]
+        },
+        {
+            "CategoryPath": "eyes/fix",
+            "Label": "Fixation",
+            "Description": "These actions simulate the fixation (focus point) for eye tracking.",
+            "Actions": [
+                {
+                    "Name": "MoveEyeFixationX", 
+                    "Label": "Move Fixation Left/Right",
+                    "Actions": [ "MoveEyeFixationX", "MoveEyeFixationNegX", "MoveEyeFixationPosX" ],
+                    "Description": "Moves the point where the eyes are focusing along the X axis."
+                },
+                {
+                    "Name": "MoveEyeFixationY", 
+                    "Label": "Move Fixation Down/Up",
+                    "Actions": [ "MoveEyeFixationY", "MoveEyeFixationNegY", "MoveEyeFixationPosY" ],
+                    "Description": "Moves the point where the eyes are focusing along the Y axis."
+                },
+                {
+                    "Name": "MoveEyeFixationZ", 
+                    "Label": "Move Fixation Forward/Back",
+                    "Actions": [ "MoveEyeFixationZ", "MoveEyeFixationNegZ", "MoveEyeFixationPosZ" ],
+                    "Description": "Moves the point where the eyes are focusing along the Z axis."
+                }
+            ]
+        }
+    ] //  CategoryActions
+  }
+};
+

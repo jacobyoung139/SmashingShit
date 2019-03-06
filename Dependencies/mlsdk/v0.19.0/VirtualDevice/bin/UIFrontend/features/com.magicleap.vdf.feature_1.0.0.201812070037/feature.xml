@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.magicleap.vdf.feature"
+      label="%label"
+      version="1.0.0.201812070037">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="">
+      %license
+   </license>
+
+   <includes
+         id="com.magicleap.common.log.feature"
+         version="1.0.0.201812070037"/>
+
+   <requires>
+      <import feature="com.magicleap.vdf.jre.feature"/>
+   </requires>
+
+   <plugin
+         id="com.magicleap.vdf.rcp"
+         download-size="127"
+         install-size="814"
+         version="1.0.0.201812070037"
+         unpack="false"/>
+
+   <plugin
+         id="com.magicleap.vdf.core"
+         download-size="1347"
+         install-size="3728"
+         version="1.0.0.201812070037"
+         unpack="false"/>
+
+   <plugin
+         id="com.magicleap.vdf.ui"
+         download-size="2466"
+         install-size="3225"
+         version="1.0.0.201812070037"
+         unpack="false"/>
+
+   <plugin
+         id="com.magicleap.vdf.protobuf"
+         download-size="8103"
+         install-size="19633"
+         version="1.0.0.201812070037"
+         unpack="false"/>
+
+   <plugin
+         id="com.magicleap.vdf.propertysheet"
+         download-size="221"
+         install-size="469"
+         version="1.0.0.201812070037"
+         unpack="false"/>
+
+   <plugin
+         id="com.magicleap.uidesigner.theme"
+         download-size="1140"
+         install-size="2208"
+         version="1.0.0.201812070037"
+         unpack="false"/>
+
+   <plugin
+         id="com.magicleap.vdf.log4j"
+         download-size="2"
+         install-size="2"
+         version="1.0.0.201812070037"
+         fragment="true"
+         unpack="false"/>
+
+</feature>

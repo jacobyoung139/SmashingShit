@@ -1,0 +1,12 @@
+INCS=$(GLAD_ROOT)/include
+
+SRCS = \
+    $(GLAD_ROOT)/src/glad.c \
+
+SRCS.win = \
+    $(GLAD_ROOT)/src/glad_wgl.c
+
+SRCS.linux = \
+  $(GLAD_ROOT)/src/glad_glx.c
+
+SHLIBS.linux=dl X11

@@ -1,0 +1,7 @@
+instructions.configure=\
+ org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(location:http${#58}//downloads.magicleap.com/vdf,type:0,name:Magic Leap Remote Update Site);\
+ org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(location:http${#58}//downloads.magicleap.com/vdf,type:1,name:Magic Leap Remote Update Site);
+ 
+instructions.unconfigure=\
+ org.eclipse.equinox.p2.touchpoint.eclipse.removeRepository(location:http${#58}//downloads.magicleap.com/vdf,type:0,name:Magic Leap Remote Update Site);\
+ org.eclipse.equinox.p2.touchpoint.eclipse.removeRepository(location:http${#58}//downloads.magicleap.com/vdf,type:1,name:Magic Leap Remote Update Site);

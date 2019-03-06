@@ -1,0 +1,1021 @@
+{
+  "ApplicationLabel": "Virtual Room",
+  "Manifests": [
+    {
+      "ManifestType": "SparseDevice",
+      "DeviceType": "VirtualRoomServer",
+      "DeviceName": "VirtualRoomServerSparseDevice",
+      "DeviceLabel": "Virtual Room",
+      "EnumerationTypes": {
+        "ObservedGeometryCacheCaptureModes": {
+          "Values": [
+            "CameraFacing",
+            "FullMesh",
+            "FullBlock",
+            "FullMeshFullBlock"
+          ]
+        }
+      },
+      "PropertyCategories" : [
+        {"Path":"Compositor", "Label":"Compositor" },
+        {"Path":"EyeViewCamera", "Label":"Eye View Camera" },
+        {"Path":"EmptyRoom", "Label":"Empty Room" },
+        {"Path":"MinimapCamera", "Label":"Minimap Camera" },
+        {"Path":"ObservedGeometry", "Label":"Observed Geometry Cache" }, 
+        {"Path":"CoPlanar", "Label":"Co-Planar Extraction" }, 
+        {"Path":"HeadposeGizmo", "Label":"Headpose Gizmo" },
+        {"Path":"ImageTargetGizmos", "Label":"Image Target Gizmos" },
+        {"Path":"InputControllerGizmos", "Label":"Input Controller Gizmos"},
+        {"Path":"HandGestureGizmos", "Label":"Hand Gesture Gizmos"}
+      ],
+      "ConfigurationProperties": {
+        "CoPlanarHalfThicknessThreshold": {
+          "Type": "float",
+          "Category": "CoPlanar",
+          "Label": "Half-Thickness Threshold",
+          "Description": "Defines the half thickness threshold for variance in points from the plane to be considered co-planar",
+          "Default": 0.045,
+          "UserVisible": false
+        },
+        "CoPlanarNormalThreshold": {
+          "Type": "float",
+          "Category": "CoPlanar",
+          "Label": "Normal Threshold",
+          "Description": "Defines the normal threshold for variance in face normals from the plane normal to be considered co-planar",
+          "Default": 10.0,
+          "UserVisible": false
+        },
+        "CoPlanarDistanceThreshold": {
+          "Type": "float",
+          "Category": "CoPlanar",
+          "Label": "Distance Threshold",
+          "Description": "Defines the distance threshold for points from the co-planar feature to be considered co-planar",
+          "Default": 1.2,
+          "UserVisible": false
+        },
+        "CoPlanarVerticalThreshold": {
+          "Type": "float",
+          "Category": "CoPlanar",
+          "Label": "Vertical Threshold",
+          "Description": "Defines the angular threshold in degrees a co-planar feature can be to be considered a vertical plane",
+          "Default": 20.0,
+          "UserVisible": false
+        },
+        "CoPlanarHorizontalThreshold": {
+          "Type": "float",
+          "Category": "CoPlanar",
+          "Label": "Horizontal Threshold",
+          "Description": "Defines the angular threshold in degrees a co-planar feature can be to be considered a horizontal plane",
+          "Default": 20.0,
+          "UserVisible": false
+        },
+        "CoPlanarMinOuterPlaneArea": {
+          "Type": "float",
+          "Category": "CoPlanar",
+          "Label": "Min Outer Plane Area",
+          "Description": "Defines the minimum area an outer co-planar feature must be to be considered valid",
+          "Default": 0.5,
+          "UserVisible": false
+        },
+        "CoPlanarMinHoleSize": {
+          "Type": "float",
+          "Category": "CoPlanar",
+          "Label": "Min Hole Size",
+          "Description": "Defines the minimum size a hole must be to be considered valid",
+          "Default": 0.5,
+          "UserVisible": false
+        },
+        "CoPlanarMinInnerPlaneArea": {
+          "Type": "float",
+          "Category": "CoPlanar",
+          "Label": "Min Inner Plane Area",
+          "Description": "Defines the minimum area an inner co-planar feature must be to be considered valid",
+          "Default": 0.2,
+          "UserVisible": false
+        },
+        "CoPlanarMinInnerPlaneSize": {
+          "Type": "float",
+          "Category": "CoPlanar",
+          "Label": "Min Inner Plane Size",
+          "Description": "Defines the minimum width and height an inner co-planar feature must be to be considered valid",
+          "Default": 0.1,
+          "UserVisible": false
+        },
+        "CoPlanarMinFragmentArea": {
+          "Type": "float",
+          "Category": "CoPlanar",
+          "Label": "Min Fragment Area",
+          "Description": "Defines the minimum area a co-planar feature must be to be considered for caching in the geometry cache block",
+          "Default": 0.3,
+          "UserVisible": false
+        },
+        "ObservedGeometryCacheBlockSize": {
+          "Type": "float",
+          "Category": "ObservedGeometry",
+          "Label": "Cache Block Size",
+          "Description": "Defines the size of generated geometry cache blocks",
+          "Default": 1.0,
+          "UserVisible": false
+        },
+        "ObservedGeometryCacheCaptureMode": {
+          "Type": "ObservedGeometryCacheCaptureModes",
+          "Category": "ObservedGeometry",
+          "Label": "Capture Mode",
+          "Description": "Defines how the meshing camera generates its observed geometry cache as it scans the room",
+          "Default": "CameraFacing"
+        },
+        "ObservedGeometryCacheCleanBlockColor": {
+          "Category": "ObservedGeometry",
+          "Label": "Fully Cached Block Color",
+          "Description": "Sets the color of the fully cached meshing blocks",
+          "Type": "rgb",
+          "Default": [
+            1.0,
+            0.41,
+            0.0
+          ]
+        },
+        "ObservedGeometryCacheDirtyBlockColor": {
+          "Category": "ObservedGeometry",
+          "Label": "Partially Cached Block Color",
+          "Description": "Sets the color of the partially cached meshing blocks",
+          "Type": "rgb",
+          "Default": [
+            1.0,
+            0.0,
+            1.0
+          ]
+        },
+        "ObservedGeometryCacheEmptyBlockColor": {
+          "Category": "ObservedGeometry",
+          "Label": "Empty Observed Block Color",
+          "Description": "Sets the color of the fully cached meshing blocks",
+          "Type": "rgb",
+          "Default": [
+            0.42,
+            0.46,
+            1.0
+          ]
+        },
+        "ObservedGeometryCacheDataColor": {
+          "Category": "ObservedGeometry",
+          "Label": "Cached Data Mesh Color",
+          "Description": "Sets the color of the cached data when Render Observed Geometry is set",
+          "Type": "rgb",
+          "Default": [
+            0.6,
+            0.85,
+            0.91
+          ],
+          "UserVisible": false
+        },
+        "ObservedGeometryShowCacheBlocks": {
+          "Category": "ObservedGeometry",
+          "Label": "Show Cache Block Grid",
+          "Description": "When set, shows the Observed Geometry Grid",
+          "Type": "boolean",
+          "Default": false
+        },
+        "ObservedGeometryShowEmptyCacheBlocks": {
+          "Category": "ObservedGeometry",
+          "Label": "Show Empty Cache Blocks",
+          "Description": "When set, shows the empty cache blocks when the Observed Geometry Render Grid setting is on",
+          "Type": "boolean",
+          "Default": false
+        },
+        "ObservedGeometryShowCacheData": {
+          "Category": "ObservedGeometry",
+          "Label": "Show Cache Block Data Mesh",
+          "Description": "When set, shows the Observed Geometry Data Mesh",
+          "Type": "boolean",
+          "Default": false,
+          "UserVisible": false
+        },
+        "MinimapCameraPosition": {
+          "Category": "MinimapCamera",
+          "Label": "Starting Position",
+          "Priority": 2,
+          "Description": "Sets the minimap camera starting and reset position",
+          "Type": "vec3",
+          "Default": [
+            0.0,
+            5.0,
+            3.0
+          ]
+        },
+        "MinimapCameraRotation": {
+          "Category": "MinimapCamera",
+          "Label": "Starting Rotation",
+          "Priority": 3,
+          "Description": "Sets the minimap camera starting and reset rotation",
+          "Type": "vec3",
+          "Default": [
+            -30.0,
+            0.0,
+            0.0
+          ]
+        },
+        "MovementAcceleration": {
+          "Category": "MinimapCamera",
+          "Label": "Movement Acceleration",
+          "Description": "Acceleration rate of the camera movement",
+          "Type": "float",
+          "Priority": 5,
+          "Default": 1.0
+        },
+        "MovementInitialVelocity": {
+          "Category": "MinimapCamera",
+          "Label": "Movement Initial Velocity",
+          "Description": "Initial velocity of the camera movement",
+          "Type": "float",
+          "Priority": 4,
+          "Default": 0.5
+        },
+        "MovementMaxVelocity": {
+          "Category": "MinimapCamera",
+          "Label": "Max Movement Speed",
+          "Description": "Max velocity of the camera movement",
+          "Type": "float",
+          "Priority": 6,
+          "Default": 20.0
+        },
+        "RotationSensitivity": {
+          "Category": "MinimapCamera",
+          "Label": "Rotation Speed Multiplier",
+          "Description": "Multiplier for camera rotation speed - negative values invert rotation direction",
+          "Type": "float",
+          "Priority": 7,
+          "Default": 2.0
+        },
+        "PanningSensitivityX": {
+          "Category": "MinimapCamera",
+          "Label": "Panning X-Axis Multiplier",
+          "Description": "Multiplier for camera panning speed - negative values invert panning movement",
+          "Type": "float",
+          "Priority": 8,
+          "Default": -1.0
+        },
+        "PanningSensitivityY": {
+          "Category": "MinimapCamera",
+          "Label": "Panning Y-Axis Multiplier",
+          "Description": "Multiplier for camera panning speed - negative values invert panning movement",
+          "Type": "float",
+          "Priority": 8,
+          "Default": 1.0
+        },
+        "MinimapClearColor": {
+          "Category": "MinimapCamera",
+          "Label": "Clear Color",
+          "Priority": 1,
+          "Description": "Sets the background clear color of the Minimap view",
+          "Type": "rgb",
+          "Default": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "CompassGizmoScreenSize": {
+          "Label": "Compass Screen Size", 
+          "Category":"MinimapCamera",
+          "Priority": 100,
+          "Description": "The screen size in pixels of the compass",
+          "Type": "int",
+          "Default": 140
+        },
+        "ViewGridColor": {
+          "Label": "View Grid Color",
+          "Category":"MinimapCamera",
+          "Priority": 101,
+          "Description": "Sets the color of the view grid lines in the minimap view",
+          "Type": "rgb",
+          "Default": [
+            0.015,
+            0.631,
+            0.745
+          ]
+        },
+        "ViewGridHeight": {
+          "Label": "View Grid Height",
+          "Category":"MinimapCamera",
+          "Priority": 102,
+          "Description": "Sets the height (Y-position) of the view grid in the minimap view",
+          "Type": "float",
+          "Default": 0.07
+        },
+        "RedrawOnDemand": {
+          "Label": "Redraw on Demand",
+          "Category":"Compositor",
+          "Description": "When set, only redraw Minimap and Eye View when changes are detected.  Can be turned off to test rendering performance.",
+          "Type": "boolean",
+          "Default": true
+        },
+        "CompositorRoomDarknessBias": {
+          "Label": "Room Darkness Bias",
+          "Category":"Compositor",
+          "Description": "Tells how much to darken the virtual room render before composition (0.0 - 1.0)",
+          "Type": "float",
+          "Default": 0.3
+        },
+        "CompositorUserContentBrightnessBias": {
+          "Label": "User Content Brightness Bias",
+          "Category":"Compositor",
+          "Description": "Tells how much to brighten the application content before composition (0.0 - 1.0)",
+          "Type": "float",
+          "Default": 0.5
+        },
+        "CompositorUserContentGammaCorrection": {
+          "Label": "User Content Gamma Correction",
+          "Category":"Compositor",
+          "Description": "Applies extra darkening to virtual room content overlaid by dark application content (0.00001 - inf)",
+          "Type": "float",
+          "Default": 2.2
+        },
+        "GlobalAmbientColor": {
+          "Label": "Global Ambient Light Color",
+          "Category":"Compositor",
+          "Description": "The constant light value uniformly applied to all objects in the scene",
+          "Type": "rgb",
+          "Default": [
+            0.1,
+            0.1,
+            0.1
+          ]
+        },
+        "EyeViewClearColor": {
+          "Category": "EyeViewCamera",
+          "Label": "Clear Color",
+          "Priority": 1,
+          "Description": "Sets the background clear color of the Eye view",
+          "Type": "rgb",
+          "Default": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "HandGestureGizmoDiffuseColor": {
+          "Label": "Gizmo Color",
+          "Category":"HandGestureGizmos",
+          "Description": "Sets the color of the Hand Gesture Gizmos",
+          "Type": "rgba",
+          "Default": [
+            0.0,
+            1.0,
+            0.0,
+            1.0
+          ]
+        },
+        "ImageTargetGizmoNoImageTrackedColor": {
+          "Category": "ImageTargetGizmos",
+          "Label": "No Image Tracked Color",
+          "Description": "Sets the color of a tracked Image Tracker Gizmo with no assigned texture",
+          "Type": "rgba",
+          "Default": [
+            1.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "ImageTargetGizmoNoImageUntrackedColor": {
+          "Category": "ImageTargetGizmos",
+          "Label": "No Image Untracked Color",
+          "Description": "Sets the color of a untracked Image Tracker Gizmo with no assigned texture",
+          "Type": "rgba",
+          "Default": [
+            0.6,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "ImageTargetGizmoTrackedColor": {
+          "Category": "ImageTargetGizmos",
+          "Label": "Tracked Color",
+          "Description": "Sets the color of a tracked Image Tracker Gizmo with an assigned texture",
+          "Type": "rgba",
+          "Default": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "ImageTargetGizmoUntrackedColor": {
+          "Category": "ImageTargetGizmos",
+          "Label": "Untracked Color",
+          "Description": "Sets the color of a untracked Image Tracker Gizmo with an assigned texture",
+          "Type": "rgba",
+          "Default": [
+            0.6,
+            0.6,
+            0.6,
+            1.0
+          ]
+        },
+        "SplashModelScale": {
+          "Category": "EmptyRoom",
+          "Label": "Model Scale",
+          "Description": "Sets the scale of the empty room model",
+          "Type": "vec3",
+          "Default": [
+            0.1,
+            0.1,
+            0.1
+          ]
+        },
+        "SplashModelRotation": {
+          "Category": "EmptyRoom",
+          "Label": "Model Rotation",
+          "Description": "Sets the euler rotation of the empty room model",
+          "Type": "vec3",
+          "Default": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "SplashModelPosition": {
+          "Category": "EmptyRoom",
+          "Label": "Model Position",
+          "Description": "Sets the position of the empty room model",
+          "Type": "vec3",
+          "Default": [
+            -0.25,
+            2.0,
+            -10.0
+          ]
+        },
+        "HeadposeStartingPosition": {
+          "Label": "Starting Position",
+          "Category":"HeadposeGizmo",
+          "Description": "Sets the starting and reset position of the headpose gizmo",
+          "Type": "vec3",
+          "Default": [
+            0.0,
+            2.0,
+            0.0
+          ]
+        },
+        "HeadposeStartingRotation": {
+          "Label": "Starting Rotation",
+          "Category":"HeadposeGizmo",
+          "Description": "Sets the starting and reset rotation of the headpose gizmo",
+          "Type": "vec3",
+          "Default": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "InputController0Color": {
+          "Category": "InputControllerGizmos",
+          "Label": "Control 1 Color",
+          "Description": "Sets the color of the control 1 gizmo",
+          "Type": "rgb",
+          "Default": [
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        "InputController0StartingPosition": {
+          "Label": "Control 1 Starting Position Offset",
+          "Category":"InputControllerGizmos",
+          "Description": "Sets the starting position (relative to the headpose) of the control 1 gizmo",
+          "Type": "vec3",
+          "Default": [
+            -0.1,
+            -0.18,
+            -0.75
+          ]
+        },
+        "InputController0StartingRotation": {
+          "Label": "Control 1 Starting Rotation Offset",
+          "Category":"InputControllerGizmos",
+          "Description": "Sets the starting rotation (relative to the headpose) of the control 1 gizmo",
+          "Type": "vec3",
+          "Default": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "InputController0HeadposeFollow": {
+          "Label": "Control 1 Headpose Follow",
+          "Category":"InputControllerGizmos",
+          "Description": "Enables the control 1 gizmo headpose follow mode",
+          "Type": "boolean",
+          "Default": false
+        },
+        "InputController1Color": {
+          "Category": "InputControllerGizmos",
+          "Label": "Control 2 Color",
+          "Description": "Sets the color of the control 2 gizmo",
+          "Type": "rgb",
+          "Default": [
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        "InputController1StartingPosition": {
+          "Label": "Control 2 Starting Position Offset",
+          "Category":"InputControllerGizmos",
+          "Description": "Sets the starting position (relative to the headpose) of the control 2 gizmo",
+          "Type": "vec3",
+          "Default": [
+            0.1,
+            -0.18,
+            -0.75
+          ]
+        },
+        "InputController1StartingRotation": {
+          "Label": "Control 2 Starting Rotation Offset",
+          "Category":"InputControllerGizmos",
+          "Description": "Sets the starting rotation (relative to the headpose) of the control 2 gizmo",
+          "Type": "vec3",
+          "Default": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "InputController1HeadposeFollow": {
+          "Label": "Control 2 Headpose Follow",
+          "Category":"InputControllerGizmos",
+          "Description": "Enables the control 2 gizmo headpose follow mode",
+          "Type": "boolean",
+          "Default": false
+        },
+        "ImageTargetStartingPosition": {
+          "Label": "Starting Position",
+          "Category":"ImageTargetGizmos",
+          "Description": "Sets the starting position (relative to the headpose) of the image target gizmos",
+          "Type": "vec3", 
+          "Default": [
+            0.0,
+            -0.18,
+            -0.75
+          ]
+        },
+        "ImageTargetStartingRotation":{
+          "Label": "Starting Rotation",
+          "Category":"ImageTargetGizmos",
+          "Description": "Sets the starting rotation (relative to the headpose) of the image target gizmos",
+          "Type": "vec3", 
+          "Default": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "ImageTargetHeadposeFollow": {
+          "Label": "Headpose Follow",
+          "Category":"ImageTargetGizmos",
+          "Description": "Enables the image target gizmo headpose follow mode (for all image targets)",
+          "Type": "boolean",
+          "Default": false
+        },
+        "LeftHandGestureStartingPosition": {
+          "Label": "Left Hand Starting Position Offset",
+          "Category":"HandGestureGizmos",
+          "Description": "Sets the starting position (relative to the headpose) of the left hand gesture gizmo",
+          "Type": "vec3", 
+          "Default": [
+            -0.1,
+            -0.18,
+            -0.75
+          ]
+        },
+        "LeftHandGestureStartingRotation":{
+          "Label": "Left Hand Starting Rotation Offset",
+          "Category":"HandGestureGizmos",
+          "Description": "Sets the starting rotation (relative to the headpose) of the left hand gesture gizmo",
+          "Type": "vec3", 
+          "Default": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "LeftHandGestureHeadposeFollow": {
+          "Label": "Left Hand Headpose Follow",
+          "Category":"HandGestureGizmos",
+          "Description": "Enables the left hand gesture gizmo headpose follow mode",
+          "Type": "boolean",
+          "Default": false
+        },
+        "RightHandGestureStartingPosition": {
+          "Label": "Right Hand Starting Position Offset",
+          "Category":"HandGestureGizmos",
+          "Description": "Sets the starting position (relative to the headpose) of the right hand gesture gizmo",
+          "Type": "vec3", 
+          "Default": [
+            0.1,
+            -0.18,
+            -0.75
+          ]
+        },
+        "RightHandGestureStartingRotation":{
+          "Label": "Right Hand Starting Rotation Offset",
+          "Category":"HandGestureGizmos",
+          "Description": "Sets the starting rotation (relative to the headpose) of the right hand gesture gizmo",
+          "Type": "vec3", 
+          "Default": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "RightHandGestureHeadposeFollow": {
+          "Label": "Right Hand Headpose Follow",
+          "Category":"HandGestureGizmos",
+          "Description": "Enables the right hand gesture gizmo headpose follow mode",
+          "Type": "boolean",
+          "Default": false
+        },
+        "MoveSnapSize": {
+          "Label": "Move Snap Size",
+          "Description": "Sets the alignment in world units when moving nodes and snapping is activated",
+          "Type": "float",
+          "Default": 1.0
+        },
+        "RotateSnapAngle": {
+          "Label": "Rotate Snap Angle",
+          "Description": "Sets the alignment in degrees when rotating nodes and snapping is activated",
+          "Type": "float",
+          "Default": 30.0
+        },
+        "ScaleSnapSize": {
+          "Label": "Scale Snap Size",
+          "Description": "Sets the alignment in world units when scaling nodes and snapping is activated",
+          "Type": "float",
+          "Default": 1.0
+        }
+      },
+      "ConfigurationSettings": {
+        "SplashModel": "splashModels/Leaper.fbx",
+        "HeadposeGizmoModel": "gizmoModels/wearable.fbx",
+        "HeadposeGizmoModelPosition": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "HeadposeGizmoModelScale": [
+          0.01,
+          0.01,
+          0.01
+        ],
+        "HeadposeGizmoModelRotation": [
+          0.0,
+          180.0,
+          0.0
+        ],
+        "InputControllerGizmoModel": "gizmoModels/Controller.fbx",
+        "InputControllerGizmoModelPosition": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "InputControllerGizmoModelScale": [
+          0.01,
+          0.01,
+          0.01
+        ],
+        "InputControllerGizmoModelRotation": [
+          -3.0,
+          0.0,
+          0.0
+        ],
+        "InputControllerGizmoPrimaryMaterialIndex": 4,
+        "ImageTargetGizmoNoImageSize": 0.1,
+        "ImageTargetFrustumTestRateMs": 64,
+        "HandGestureGizmoModel": "gizmoModels/cube.obj",
+        "HandGestureGizmoModelPosition": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "HandGestureGizmoModelScale": [
+          0.1,
+          0.1,
+          0.1
+        ],
+        "HandGestureGizmoModelRotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "CompassGizmoModelScale": [
+          0.0015,
+          0.0015,
+          0.0015
+        ],
+        "CompassGizmoModelPosition": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "CompassGizmoModelRotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "CompassGizmoXAxisModel": "gizmoModels/gizmoMoveX.fbx",
+        "CompassGizmoYAxisModel": "gizmoModels/gizmoMoveY.fbx",
+        "CompassGizmoZAxisModel": "gizmoModels/gizmoMoveZ.fbx",
+        "ViewGridGizmoModelScale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "ViewGridGizmoModelPosition": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ViewGridGizmoModelRotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "MoveGizmoModelScale": [
+          0.004,
+          0.004,
+          -0.004
+        ],
+        "MoveGizmoModelPosition": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "MoveGizmoModelRotation": [
+          0.0,
+          180.0,
+          0.0
+        ],
+        "MoveGizmoXAxisModel": "gizmoModels/gizmoMoveX.fbx",
+        "MoveGizmoYAxisModel": "gizmoModels/gizmoMoveY.fbx",
+        "MoveGizmoZAxisModel": "gizmoModels/gizmoMoveZ.fbx",
+        "MoveGizmoXYPlaneModel": "gizmoModels/gizmoMoveXY.fbx",
+        "MoveGizmoXZPlaneModel": "gizmoModels/gizmoMoveXZ.fbx",
+        "MoveGizmoYZPlaneModel": "gizmoModels/gizmoMoveYZ.fbx",
+        "MoveGizmoScreenSpaceModel": "gizmoModels/gizmoMoveCenter.fbx",
+        "ScaleGizmoModelScale": [
+          0.005,
+          0.005,
+          -0.005
+        ],
+        "ScaleGizmoModelPosition": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ScaleGizmoModelRotation": [
+          0.0,
+          180.0,
+          0.0
+        ],
+        "ScaleGizmoXAxisModel": "gizmoModels/gizmoScaleX.fbx",
+        "ScaleGizmoYAxisModel": "gizmoModels/gizmoScaleY.fbx",
+        "ScaleGizmoZAxisModel": "gizmoModels/gizmoScaleZ.fbx",
+        "ScaleGizmoScreenSpaceModel": "gizmoModels/gizmoScaleCenter.fbx",
+        "RotationGizmoModelScale": [
+          0.003,
+          0.003,
+          0.003
+        ],
+        "RotationGizmoModelPosition": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "RotationGizmoModelRotation": [
+          0.0,
+          180.0,
+          0.0
+        ],
+        "RotationGizmoXAxisModel": "gizmoModels/gizmoRotateX.fbx",
+        "RotationGizmoYAxisModel": "gizmoModels/gizmoRotateY.fbx",
+        "RotationGizmoZAxisModel": "gizmoModels/gizmoRotateZ.fbx",
+        "RotationGizmoScreenSpaceModel": "gizmoModels/gizmoRotateFacing.fbx"
+      },
+      "UpdateHertz": 120.0,
+      "ObserverChannels": [
+        "Graphics Contract"
+      ],
+      "ProducerChannels": [
+        "Minimap",
+        "Virtual Room Environment"
+      ]
+    },
+    {
+      "ManifestType": "SparseDevice",
+      "DeviceType": "Headpose",
+      "DeviceName": "VirtualRoomHeadposeSparseDevice",
+      "DeviceLabel": "Virtual Room - Headpose",
+      "ConfigurationSettings": {
+        "HeadTransformChannel": "Head Transform",
+        "TrackingStateChannel": "Head Tracking State"
+      },
+      "UpdateHertz": 60.0,
+      "ProducerChannels": [
+        "Head Transform",
+        "Head Tracking State"
+      ],
+      "ObserverChannels": [
+        "Head Transform"
+      ]
+    },
+    {
+      "ManifestType": "SparseDevice",
+      "DeviceType": "Input",
+      "DeviceName": "VirtualRoomInputSparseDevice",
+      "DeviceLabel": "Virtual Room - Input",
+      "ConfigurationSettings": {},
+      "ProducerChannels": [
+        "Input Controller 1",
+        "Input Controller 1 Transform",
+        "Input Controller 2",
+        "Input Controller 2 Transform"
+      ],
+      "ObserverChannels": [
+        "Input Controller 1 Transform",
+        "Input Controller 2 Transform"
+      ]
+    },
+    {
+      "ManifestType": "SparseDevice",
+      "DeviceType": "Meshing",
+      "DeviceName": "VirtualRoomMeshingSparseDevice",
+      "DeviceLabel": "Virtual Room - Meshing",
+      "ConfigurationSettings": {
+        "MeshDataChannel": "Mesh Data",
+        "MeshInfoDataChannel": "Mesh Info Data",
+        "MeshBufferCapacity": 100000000
+      },
+      "UpdateHertz": 10.0,
+      "ProducerChannels": [
+        "Mesh Data",
+        "Mesh Info Data"
+      ]
+    },
+    {
+      "ManifestType": "SparseDevice",
+      "DeviceType": "Raycast",
+      "DeviceName": "VirtualRoomRaycastSparseDevice",
+      "DeviceLabel": "Virtual Room - Raycast",
+      "ConfigurationSettings": {},
+      "UpdateHertz": 10.0,
+      "ProducerChannels": [
+        "Raycast Results"
+      ]
+    },
+    {
+      "ManifestType": "SparseDevice",
+      "DeviceType": "Planes",
+      "DeviceName": "VirtualRoomPlanesSparseDevice",
+      "DeviceLabel": "Virtual Room - Planes",
+      "ConfigurationSettings": {
+        "PlanesDataChannel": "Planes Data"
+      },
+      "UpdateHertz": 30.0,
+      "ProducerChannels": [
+        "Planes Data"
+      ]
+    },
+    {
+      "ManifestType": "SparseDevice",
+      "DeviceType": "Gestures",
+      "DeviceName": "VirtualRoomGesturesSparseDevice",
+      "DeviceLabel": "Virtual Room - Gestures",
+      "ConfigurationSettings": {
+        "KeypointPosition_Left_0": "Keypoint Position Left 0",
+        "KeypointOrientation_Left_0": "Keypoint Orientation Left 0",
+        "KeypointPosition_Left_1": "Keypoint Position Left 1",
+        "KeypointOrientation_Left_1": "Keypoint Orientation Left 1",
+        "KeypointPosition_Right_0": "Keypoint Position Right 0",
+        "KeypointOrientation_Right_0": "Keypoint Orientation Right 0",
+        "KeypointPosition_Right_1": "Keypoint Position Right 1",
+        "KeypointOrientation_Right_1": "Keypoint Orientation Right 1",
+        "LeftHandCenterPosition": "Left Hand Center Position",
+        "LeftHandCenterOrientation": "Left Hand Center Orientation",
+        "RightHandCenterPosition": "Right Hand Center Position",
+        "RightHandCenterOrientation": "Right Hand Center Orientation",
+        "EmitMockKeypoints": true,
+        "KeypointsFile": "Keypoints.json"
+      },
+      "ConfigurationProperties": {
+        "SetGesturePositionOnCreate": {
+          "Description": "Selects whether to set Gesture hand centers to a default location when Gestures tracker is created",
+          "Label": "Reset Gestures on Create",
+          "Type": "boolean",
+          "Default": true
+        }
+      },
+      "UpdateHertz": 30.0,
+      "ProducerChannels": [
+        "Gesture Tracking Data",
+        "Keypoint Position Left 0",
+        "Keypoint Orientation Left 0",
+        "Keypoint Position Left 1",
+        "Keypoint Orientation Left 1",
+        "Keypoint Position Right 0",
+        "Keypoint Orientation Right 0",
+        "Keypoint Position Right 1",
+        "Keypoint Orientation Right 1",
+        "Left Hand Center Position",
+        "Left Hand Center Orientation",
+        "Right Hand Center Position",
+        "Right Hand Center Orientation"
+      ],
+      "ObserverChannels": [
+        "Left Hand Center Position",
+        "Left Hand Center Orientation",
+        "Right Hand Center Position",
+        "Right Hand Center Orientation"
+      ]
+    },
+    {
+      "ManifestType": "SparseDevice",
+      "DeviceType": "HandTracking",
+      "DeviceName": "VirtualRoomHandTrackingSparseDevice",
+      "DeviceLabel": "Virtual Room - Hand Tracking",
+      "ConfigurationSettings": {
+        "LeftHandKeypoints": "Left Hand Keypoints",
+        "RightHandKeypoints": "Right Hand Keypoints",
+        "LeftHandCenterPosition": "Left Hand Center Position",
+        "LeftHandCenterOrientation": "Left Hand Center Orientation",
+        "RightHandCenterPosition": "Right Hand Center Position",
+        "RightHandCenterOrientation": "Right Hand Center Orientation",
+        "EmitMockKeypoints": true,
+        "KeypointsFile": "HandTrackingKeypoints.json"
+      },
+      "ConfigurationProperties": {},
+      "UpdateHertz": 30.0,
+      "ProducerChannels": [
+        "Hand Tracking Data",
+        "Left Hand Keypoints",
+        "Right Hand Keypoints",
+        "Left Hand Center Position",
+        "Left Hand Center Orientation",
+        "Right Hand Center Position",
+        "Right Hand Center Orientation"
+      ],
+      "ObserverChannels": [
+        "Left Hand Center Position",
+        "Left Hand Center Orientation",
+        "Right Hand Center Position",
+        "Right Hand Center Orientation"
+      ]
+    },
+    {
+      "ManifestType": "SparseDevice",
+      "DeviceType": "ImageTracking",
+      "DeviceName": "VirtualRoomImageTrackingSparseDevice",
+      "DeviceLabel": "Virtual Room - ImageTracking",
+      "ConfigurationSettings": {
+        "ImageTrackingFeatureChannel": "Image Tracking"
+      },
+      "UpdateHertz": 30.0,
+      "ProducerChannels": [
+        "Image Tracking",
+        "Image Target Position 0",
+        "Image Target Orientation 0",
+        "Image Target Result 0",
+        "Image Target Position 1",
+        "Image Target Orientation 1",
+        "Image Target Result 1",
+        "Image Target Position 2",
+        "Image Target Orientation 2",
+        "Image Target Result 2",
+        "Image Target Position 3",
+        "Image Target Orientation 3",
+        "Image Target Result 3",
+        "Image Target Position 4",
+        "Image Target Orientation 4",
+        "Image Target Result 4"
+      ],
+      "ObserverChannels": [
+        "Image Tracking",
+        "Image Target Position 0",
+        "Image Target Orientation 0",
+        "Image Target Result 0",
+        "Image Target Position 1",
+        "Image Target Orientation 1",
+        "Image Target Result 1",
+        "Image Target Position 2",
+        "Image Target Orientation 2",
+        "Image Target Result 2",
+        "Image Target Position 3",
+        "Image Target Orientation 3",
+        "Image Target Result 3",
+        "Image Target Position 4",
+        "Image Target Orientation 4",
+        "Image Target Result 4"
+      ]
+    }
+  ]
+}

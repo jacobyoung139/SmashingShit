@@ -1,0 +1,117 @@
+{
+   "ChannelMap" : [
+      {
+         "Channel" : "Eye Fixation Position",
+         "Device" : "ML1EyeTrackingSparseDevice"
+      },
+      {
+         "Channel" : "Eye Left Center Position",
+         "Device" : "ML1EyeTrackingSparseDevice"
+      },
+      {
+         "Channel" : "Eye Right Center Position",
+         "Device" : "ML1EyeTrackingSparseDevice"
+      },
+      {
+         "Channel" : "Eye Tracking State",
+         "Device" : "ML1EyeTrackingSparseDevice"
+      },
+      {
+         "Channel" : "Gesture Tracking Data",
+         "Device" : "ML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Graphics Contract",
+         "Device" : "ML1GraphicsViewSparseDevice"
+      },
+      {
+         "Channel" : "Hand Tracking Data",
+         "Device" : "ML1HandTrackingSparseDevice"
+      },
+      {
+         "Channel" : "Head Transform",
+         "Device" : "ML1HeadposeSparseDevice"
+      },
+      {
+         "Channel" : "Head Tracking State",
+         "Device" : "ML1HeadposeSparseDevice"
+      },
+      {
+         "Channel" : "Keypoint Orientation Left 0",
+         "Device" : "ML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Keypoint Orientation Left 1",
+         "Device" : "ML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Keypoint Orientation Right 0",
+         "Device" : "ML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Keypoint Orientation Right 1",
+         "Device" : "ML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Keypoint Position Left 0",
+         "Device" : "ML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Keypoint Position Left 1",
+         "Device" : "ML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Keypoint Position Right 0",
+         "Device" : "ML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Keypoint Position Right 1",
+         "Device" : "ML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Left Hand Center Orientation",
+         "Device" : "ML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Left Hand Center Position",
+         "Device" : "ML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Left Hand Keypoints",
+         "Device" : "ML1HandTrackingSparseDevice"
+      },
+      {
+         "Channel" : "Raycast Results",
+         "Device" : "ML1RaycastSparseDevice"
+      },
+      {
+         "Channel" : "Right Hand Center Orientation",
+         "Device" : "ML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Right Hand Center Position",
+         "Device" : "ML1GesturesSparseDevice"
+      },
+      {
+         "Channel" : "Right Hand Keypoints",
+         "Device" : "ML1HandTrackingSparseDevice"
+      },      
+      {
+          "Channel":"Input Controller 1",
+          "Device":"ML1InputSparseDevice"
+      },   
+      {
+          "Channel":"Input Controller 1 Transform",
+          "Device":"ML1InputSparseDevice"
+      },
+      {
+          "Channel":"Input Controller 2",
+          "Device":"ML1InputSparseDevice"
+      },   
+      {
+          "Channel":"Input Controller 2 Transform",
+          "Device":"ML1InputSparseDevice"
+      }
+   ],
+   "ManifestType" : "ChannelMap"
+}

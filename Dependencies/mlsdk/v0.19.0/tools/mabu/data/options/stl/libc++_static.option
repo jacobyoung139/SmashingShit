@@ -1,0 +1,14 @@
+
+CXXFLAGS.device = -nostdinc++ -I$(MLSDK)/lumin/stl/libc++/include
+LDFLAGS.device = -L$(MLSDK)/lumin/stl/libc++/lib
+
+CXXFLAGS.linux_gcc = -nostdinc++ -I/usr/include/c++/v1
+CXXFLAGS.linux_clang,osx = -stdlib=libc++
+LDFLAGS.linux_gcc = -nodefaultlibs
+
+STLIBS.device = c++_static c++abi android_support
+STLIBS.linux = :libc++.a
+SHLIBS.linux = gcc_s gcc pthread
+
+# Mac does not provide a static version of libc++.
+SHLIBS.osx = c++ c++abi

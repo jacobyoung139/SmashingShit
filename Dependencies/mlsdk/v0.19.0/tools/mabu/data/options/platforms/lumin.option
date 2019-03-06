@@ -1,0 +1,9 @@
+CFLAGS.lumin_aarch64=--sysroot=$(MLSDK)/lumin
+CXXFLAGS.lumin_aarch64=--sysroot=$(MLSDK)/lumin
+CFLAGS.lumin_gcc_aarch64,lumin_clang_aarch64=\
+    -march=armv8-a \
+    -mcpu=cortex-a57+crypto
+CXXFLAGS.lumin_gcc_aarch64,lumin_clang_aarch64=\
+    -march=armv8-a \
+    -mcpu=cortex-a57+crypto
+LDFLAGS.lumin_aarch64=--sysroot=$(MLSDK)/lumin

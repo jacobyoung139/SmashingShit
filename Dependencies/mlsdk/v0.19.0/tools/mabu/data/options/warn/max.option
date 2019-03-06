@@ -1,0 +1,12 @@
+#
+CFLAGS.gcc=-Wall -pedantic -Wformat=2 -Wextra  -Wundef -Wstrict-prototypes
+CXXFLAGS.gcc=-Wall -pedantic -Wformat=2 -Wextra -Wundef
+
+# note: not adding -Weverything for clang because it includes language standard
+# checks that conflict with -std=c... settings and may be spam -- see warn-compatibility
+CFLAGS.clang=-Wall -pedantic -Wformat=2 -Wextra -Wundef -Wstrict-prototypes
+CXXFLAGS.clang=-Wall -pedantic -Wformat=2 -Wextra -Wundef
+
+# turn off "inlined function removed" and "function not inlined"
+CFLAGS.msvc=-Wall -sdl -wd4514 -wd4710
+CXXFLAGS.msvc=-Wall -sdl -wd4514 -wd4710
